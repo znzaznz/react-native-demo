@@ -7,11 +7,11 @@
 
 import React from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {CheckBox, createTheme, ThemeProvider, Button} from '@rneui/themed';
+import {createTheme, ThemeProvider} from '@rneui/themed';
 import {NavigationContainer} from '@react-navigation/native';
-import Header from './components/Header';
 import {StatusBar} from 'react-native';
 import {colors} from './global/styles';
+import SignScreen from './screens/auth_screens/SignScreen';
 
 const theme = createTheme({
   lightColors: {
@@ -26,7 +26,7 @@ function App() {
       <SafeAreaProvider>
         <ThemeProvider theme={theme}>
           <StatusBar backgroundColor={colors.primary_color} />
-          <Header />
+          <SignScreen />
         </ThemeProvider>
       </SafeAreaProvider>
     </NavigationContainer>

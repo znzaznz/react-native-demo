@@ -3,4 +3,11 @@ import glyphMap from '../assets/fonts/iconfont.json';
 
 const IconFont = createIconSet(glyphMap, 'iconfont', 'iconfont.ttf');
 
-export default IconFont;
+export default props => (
+  <IconFont
+    style={{
+      fontSize: 26,
+    }}
+    {...props}
+  />
+);
