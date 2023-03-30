@@ -8,3 +8,4 @@ export const login_button_icon = {
     fontSize: 26,
     color: 'white',
 };
+
