@@ -6,18 +6,29 @@
  */
 
 import React from 'react';
-import {Text} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {CheckBox, ThemeProvider} from '@rneui/themed';
+import {CheckBox, createTheme, ThemeProvider, Button} from '@rneui/themed';
 import {NavigationContainer} from '@react-navigation/native';
+import Header from './components/Header';
+
+const theme = createTheme({
+  lightColors: {
+    primary: '#899656',
+  },
+  darkColors: {
+    primary: '#344512',
+  },
+  mode: 'light',
+});
 
 function App() {
   return (
     <NavigationContainer>
       <SafeAreaProvider>
-        <ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <Header />
           <CheckBox checked size={30} />
-          <Text>你好，写代码了</Text>
+          <Button title={'按钮'} />
         </ThemeProvider>
       </SafeAreaProvider>
     </NavigationContainer>
