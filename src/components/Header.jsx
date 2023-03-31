@@ -3,11 +3,20 @@ import {StyleSheet, View} from 'react-native';
 import {colors} from '../global/styles';
 import {Button, Text} from '@rneui/themed';
 import IconFont from '../plugin/IconSet';
+import {useNavigation} from '@react-navigation/native';
 
 const Header = ({title, iconName}) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.header}>
-      <Button icon={<IconFont style={styles.icon} name={iconName} />} />
+      <Button
+        onPress={() => {
+          navigation.navigate({
+            name: 'Login',
+          });
+        }}
+        icon={<IconFont style={styles.icon} name={iconName} />}
+      />
       <Text h4 style={styles.header_text}>
         {title}
       </Text>

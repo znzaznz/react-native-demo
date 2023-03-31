@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {colors} from '../../global/styles';
 import Header from '../../components/Header';
-import {Button, Input, Text} from '@rneui/themed';
+import {Button, Text} from '@rneui/themed';
 import * as Animatable from 'react-native-animatable';
 import IconFont from '../../plugin/IconSet';
 import LoginWithWechat from '../../components/loginWays/LoginWithWechat';
