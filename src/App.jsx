@@ -11,6 +11,7 @@ import {createTheme, ThemeProvider} from '@rneui/themed';
 import {colors} from './global/styles';
 import RouterContainer from './router/RouterContainer';
 import 'react-native-gesture-handler';
+import {StatusBar} from 'react-native';
 
 const theme = createTheme({
   lightColors: {
@@ -23,6 +24,7 @@ function App() {
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
+        <StatusBar backgroundColor={colors.primary_color} />
         <RouterContainer />
       </ThemeProvider>
     </SafeAreaProvider>
