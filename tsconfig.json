@@ -1,3 +1,21 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    // Path alias config
+    "baseUrl": ".",
+    "paths": {
+      "@/utils/*": [
+        "./src/utils/*"
+      ],
+      "@/assets/*": [
+        "./src/assets/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/services/*": [
+        "./src/services/*"
+      ]
+    }
+  }
 }

@@ -1,24 +1,18 @@
-import React, {useEffect, useState} from 'react';
-import {
-  StyleSheet,
-  TextInput,
-  TouchableHighlight,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
-import {colors} from '../../global/styles';
-import Header from '../../components/Header';
+import React, {useState} from 'react';
+import {StyleSheet, TextInput, TouchableOpacity, View} from 'react-native';
+import {colors} from '@/assets/styles/styles';
+import Header from '@/components/Header';
 import {Button, Text} from '@rneui/themed';
 import * as Animatable from 'react-native-animatable';
 import IconFont from '../../plugin/IconSet';
-import LoginWithWechat from '../../components/loginWays/LoginWithWechat';
-import LoginWithQQ from '../../components/loginWays/LoginWithQQ';
+import LoginWithWechat from '@/components/loginWays/LoginWithWechat';
 import {login_button} from './login_styles';
+import LoginWithQQ from '@/components/loginWays/LoginWithQQ';
 
 const SignScreen = () => {
   const [isFocus, setIsFocus] = useState(false);
   const [showPassWord, setShowPassWord] = useState(false);
+
   return (
     <View>
       <Header title={'我的账户'} iconName={'icon-jiantou_xiangzuo'} />

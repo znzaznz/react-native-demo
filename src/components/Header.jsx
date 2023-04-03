@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {colors} from '../global/styles';
+import {colors} from '@/assets/styles/styles';
 import {Button, Text} from '@rneui/themed';
 import IconFont from '../plugin/IconSet';
 import {useNavigation} from '@react-navigation/native';

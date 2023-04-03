@@ -8,7 +8,7 @@
 import React from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {createTheme, ThemeProvider} from '@rneui/themed';
-import {colors} from './global/styles';
+import {colors} from '@/assets/styles/styles';
 import RouterContainer from './router/RouterContainer';
 import 'react-native-gesture-handler';
 import {StatusBar} from 'react-native';

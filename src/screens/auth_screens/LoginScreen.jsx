@@ -16,7 +16,7 @@ const LoginScreen = () => {
             title={<Text style={styles.text}>Hello Swiper</Text>}
             style={styles.slide1}>
             <Image
-              source={require('../../assets/img/img.png')}
+              source={require('@/assets/img/img.png')}
               style={{width: '100%', height: '100%'}}
             />
           </View>
