@@ -8,12 +8,11 @@ const Stack = createStackNavigator();
 const RouterContainer = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Home">
         {route.map(r => (
           <Stack.Screen
             options={{
               headerShown: false,
-              // ...TransitionPresets.ModalSlideFromBottomIOS,
               ...TransitionPresets.SlideFromRightIOS,
             }}
             key={r.name}

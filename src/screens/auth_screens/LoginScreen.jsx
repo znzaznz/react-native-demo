@@ -1,69 +1,81 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import {Button, Image, Text} from '@rneui/themed';
 import {useNavigation} from '@react-navigation/native';
 import Swiper from 'react-native-swiper';
+import {nanoid} from 'nanoid';
+import {homePageSwiper} from '@/utils/common';
+import {colors} from '@/assets/styles/styles';
 
 const LoginScreen = () => {
   const navigation = useNavigation();
   return (
-    <View>
-      <Text>这是登录界面</Text>
-      <Text style={styles.text1}>这是swiper</Text>
+    <View style={styles.login_screen}>
+      <View>
+        <Text h4 h4Style={{...styles.header, marginTop: 15}}>
+          发现你心仪的餐厅
+        </Text>
+        <Text h4 h4Style={styles.header}>
+          在你的身边
+        </Text>
+      </View>
       <View style={styles.wrapper}>
-        <Swiper removeClippedSubviews={false} showsButtons loop autoplay={true}>
-          <View
-            title={<Text style={styles.text}>Hello Swiper</Text>}
-            style={styles.slide1}>
-            <Image
-              source={require('@/assets/img/img.png')}
-              style={{width: '100%', height: '100%'}}
-            />
-          </View>
-          <View testID="Beautiful" style={styles.slide2}>
-            <Text style={styles.text}>Beautiful</Text>
-          </View>
-          <View testID="Simple" style={styles.slide3}>
-            <Text style={styles.text}>And simple</Text>
-          </View>
+        <Swiper removeClippedSubviews={false} loop>
+          {homePageSwiper.map(i => (
+            <View testID="Hello" key={nanoid(5)} style={styles.slide1}>
+              <Image
+                source={i.source}
+                style={{width: '100%', height: '100%'}}
+              />
+            </View>
+          ))}
         </Swiper>
       </View>
-      <Button
-        onPress={() => {
-          navigation.navigate({
-            name: 'LoginState',
-          });
-        }}
-        title={'跳转到登录'}
-      />
+      <View style={styles.button_container}>
+        <Button
+          onPress={() => {
+            navigation.navigate({
+              name: 'LoginState',
+            });
+          }}
+          buttonStyle={{borderRadius: 5}}
+          size={'lg'}
+          title={'登录用户'}
+        />
+        <Button
+          onPress={() => {
+            console.log('点击登录');
+          }}
+          size={'lg'}
+          type={'outline'}
+          buttonStyle={styles.create_user}
+          title={'新建用户'}
+        />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  login_screen: {
+    // height: '100%',
+    flex: 1,
+    justifyContent: 'space-between',
+  },
+  header: {
+    color: colors.primary_color,
+    textAlign: 'center',
+    marginTop: 5,
+  },
+  create_user: {
+    borderRadius: 5,
+    marginVertical: 20,
+  },
   wrapper: {
-    height: 300,
-    width: '100%',
+    height: 270,
   },
-  slide1: {
-    flex: 1,
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#97CAE5',
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#92BBD9',
-  },
-  text: {
-    color: 'red',
-    fontSize: 30,
-    fontWeight: 'bold',
+  button_container: {
+    marginHorizontal: 20,
   },
 });
 

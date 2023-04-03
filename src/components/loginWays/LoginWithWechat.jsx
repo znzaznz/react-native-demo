@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import IconFont from '../../plugin/IconSet';
+import IconFont from '../../plugin/IconFont';
 import {
   login_button,
   login_button_icon,

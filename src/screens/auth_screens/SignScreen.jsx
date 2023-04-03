@@ -4,7 +4,7 @@ import {colors} from '@/assets/styles/styles';
 import Header from '@/components/Header';
 import {Button, Text} from '@rneui/themed';
 import * as Animatable from 'react-native-animatable';
-import IconFont from '../../plugin/IconSet';
+import IconFont from '../../plugin/IconFont';
 import LoginWithWechat from '@/components/loginWays/LoginWithWechat';
 import {login_button} from './login_styles';
 import LoginWithQQ from '@/components/loginWays/LoginWithQQ';

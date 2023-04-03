@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {colors} from '@/assets/styles/styles';
 import {Button, Text} from '@rneui/themed';
-import IconFont from '../plugin/IconSet';
+import IconFont from '../plugin/IconFont';
 import {useNavigation} from '@react-navigation/native';
 
 const Header = ({title, iconName}) => {
