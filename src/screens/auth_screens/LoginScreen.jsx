@@ -35,7 +35,7 @@ const LoginScreen = () => {
         <Button
           onPress={() => {
             navigation.navigate({
-              name: 'LoginState',
+              name: 'SignUser',
             });
           }}
           buttonStyle={{borderRadius: 5}}

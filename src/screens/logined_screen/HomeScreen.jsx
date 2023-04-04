@@ -3,17 +3,31 @@ import {View, StyleSheet} from 'react-native';
 import {Button, Text, withBadge} from '@rneui/themed';
 import IconFont from '../../plugin/IconFont';
 import {Drawer} from 'react-native-drawer-layout';
+import {useNavigation} from '@react-navigation/native';
 
 const HomeScreen = () => {
+  const {navigate} = useNavigation();
   const BadgeIcon = withBadge(12)(IconFont);
   const [open, setOpen] = React.useState(false);
   return (
     <Drawer
       open={open}
+      swipeEnabled={false}
       onOpen={() => setOpen(true)}
       onClose={() => setOpen(false)}
       renderDrawerContent={() => {
-        return <Text>Drawer content</Text>;
+        return (
+          <View>
+            <Button
+              title={'点我返回首页'}
+              onPress={() => {
+                navigate({
+                  name: 'Second',
+                });
+              }}
+            />
+          </View>
+        );
       }}>
       <View style={styles.home_screen}>
         <IconFont name={'icon-hanbaobao'} />
